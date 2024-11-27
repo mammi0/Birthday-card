@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #fce4ec, #ffffff);
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .card, .pretty-page {
+            margin: 50px auto;
+            padding: 20px;
+            max-width: 600px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #e91e63;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #555;
+            font-size: 18px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            background-color: #e91e63;
+            color: white;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #c2185b;
+        }
+
+        .balloons {
+            display: flex;
+            justify-content: space-evenly;
+            margin-bottom: 20px;
+        }
+
+        .balloon {
+            width: 80px;
+            height: 120px;
+            background-color: #ff4081;
+            border-radius: 50%;
+            position: relative;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .balloon::after {
+            content: "";
+            position: absolute;
+            width: 2px;
+            height: 50px;
+            background-color: #333;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .cake {
+            margin: 20px auto;
+            width: 150px;
+            height: 150px;
+            background: url('https://handletheheat.com/wp-content/uploads/2015/03/Best-Birthday-Cake-with-milk-chocolate-buttercream-SQUARE.jpg') center/cover no-repeat;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .cake::before {
+            content: "";
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            background-color: #ff5722;
+            border-radius: 50%;
+        }
+
+        .note {
+            margin-top: 20px;
+            color: #333;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <!-- First Page -->
+    <div id="card" class="card">
+        <h1>🎉 Happy Birthday! 🎂</h1>
+        <p>Wishing you a day filled with joy and happiness!</p>
+        <button onclick="showPrettyPage()">Open Surprise!</button>
+    </div>
+
+    <!-- Pretty Page -->
+    <div id="prettyPage" class="pretty-page hidden">
+        <h1>🎊 Surprise! 🎂</h1>
+        <div class="balloons">
+            <div class="balloon"></div>
+            <div class="balloon" style="background-color: #ffeb3b;"></div>
+            <div class="balloon" style="background-color: #4caf50;"></div>
+        </div>
+        <div class="cake"></div>
+        <p class="note">
+            Wishing you all the best in life as you continue to achieve great things. Your dedication, determination, and positive influence are truly inspiring. I deeply admire your ability to strive for excellence and make a meaningful impact on those around you. May your journey ahead be filled with success, joy, and remarkable accomplishments.
+        </p>
+    </div>
+
+    <script>
+        function showPrettyPage() {
+            document.getElementById('card').classList.add('hidden');
+            document.getElementById('prettyPage').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
